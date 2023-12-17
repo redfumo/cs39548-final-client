@@ -24,6 +24,12 @@ const CampusView = (props) => {
       <h1>{campus.name}</h1>
       <p>{campus.address}</p>
       <p>{campus.description}</p>
+      
+      {/* Print out a message if there are no students enrolled */}
+      {campus.students.length == 0 ? (
+        <div><p>There are no students enrolled at this campus.</p></div>
+      ) : ("")}
+      
       {campus.students.map( student => {
         let name = student.firstname + " " + student.lastname;
         return (
@@ -34,7 +40,13 @@ const CampusView = (props) => {
           </div>
         );
       })}
+
+      <Link to={`/editcampus/${campus.id}`}>
+        <button>Edit Campus</button>
+      </Link>
+      <br></br>
       <button onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
+      
     </div>
   );
 };
