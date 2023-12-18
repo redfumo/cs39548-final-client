@@ -32,7 +32,10 @@ const StudentView = (props) => {
       </Link>
       )
       }
-
+      <Link to={`/editstudent/${student.id}`}>
+        <button>Edit Student</button>
+      </Link>
+      <br></br>
       {/*Redirect to the list of all students after deleting a student*/}
       <Link to={`/students`}>
         <button onClick={() => deleteStudent(student.id)}>Delete Student</button>
