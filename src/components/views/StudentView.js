@@ -22,7 +22,14 @@ const StudentView = (props) => {
   return (
     <div>
       <h1>{student.firstname + " " + student.lastname}</h1>
-   
+      <h2>Email: {student.email}</h2>
+      <h2>GPA: {student.gpa}</h2>
+
+      {/* Display image from url */}
+      <img src={student.imageUrl} width={150} alt="student"/>
+      <br></br>
+
+      <h3>Attends:</h3>
       {/* Prints out message if the student is not enrolled anywhere */}
       {student.campusId == null ? (
         <div><h3>This student is not enrolled at any campus.</h3></div>
