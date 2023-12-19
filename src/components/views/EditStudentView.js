@@ -52,12 +52,12 @@ const EditStudentView = (props) => {
           </div>
           <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>New First Name: </label>
-            <input type="text" name="firstname" onChange ={(e) => handleChange(e)} />
+            <input type="text" name="firstname" onChange ={(e) => handleChange(e)} required />
             <br/>
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>New Last Name: </label>
-            <input type="text" name="lastname" onChange={(e) => handleChange(e)} />
+            <input type="text" name="lastname" onChange={(e) => handleChange(e)} required />
             <br/>
             <br/>
 
@@ -67,7 +67,7 @@ const EditStudentView = (props) => {
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>New Email: </label>
-            <input type="text" name="email" onChange={(e) => handleChange(e)} />
+            <input type="text" name="email" onChange={(e) => handleChange(e)} required />
             <br/>
             <br/>
 
@@ -76,8 +76,8 @@ const EditStudentView = (props) => {
             <br/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>New GPA: </label>
-            <input type="text" name="gpa" onChange={(e) => handleChange(e)} />
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>GPA (0.0 to 4.0): </label>
+            <input type="text" pattern="[0-3]\.\d+|4\.0" placeholder="0.0, 2.7, 4.0" name="gpa" onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
