@@ -24,12 +24,19 @@ const CampusView = (props) => {
       <h1>{campus.name}</h1>
       <p>{campus.address}</p>
       <p>{campus.description}</p>
+
+      {/* Display image from url */}
+      <img src={campus.imageUrl} width={500} alt="school"/>
+      <br></br>
+      {/* Buttons to edit and delete campus */}
+      <Link to={`/editcampus/${campus.id}`}>
+        <button>Edit Campus</button>
+      </Link>
+      <br></br>
+      <button onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
+      <hr></hr>
       
-      {/* Print out a message if there are no students enrolled */}
-      {campus.students.length == 0 ? (
-        <div><p>There are no students enrolled at this campus.</p></div>
-      ) : ("")}
-      
+      <h1>List of Students:</h1>
       {campus.students.map( student => {
         let name = student.firstname + " " + student.lastname;
         return (
@@ -41,12 +48,11 @@ const CampusView = (props) => {
         );
       })}
 
-      <Link to={`/editcampus/${campus.id}`}>
-        <button>Edit Campus</button>
-      </Link>
-      <br></br>
-      <button onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
-      
+      {/* Print out a message if there are no students enrolled */}
+      {campus.students.length == 0 ? (
+        <div><p>There are no students enrolled at this campus.</p></div>
+      ) : ("")}
+
     </div>
   );
 };
