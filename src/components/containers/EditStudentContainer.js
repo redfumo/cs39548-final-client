@@ -18,13 +18,13 @@ class EditStudentContainer extends Component {
   // Initialize state
   constructor(props){
     super(props);
-    //console.log("props here\n")
-    //console.log(props);
-    //console.log(props.campus);
     this.state = {
       firstname: "", 
       lastname: "", 
       campusId: null, 
+      email: "",
+      imageUrl: null,
+      gpa: null,
       redirect: false, 
       redirectId: null
     };
@@ -44,7 +44,10 @@ class EditStudentContainer extends Component {
     let student = {
       firstname: this.state.firstname,
       lastname: this.state.lastname,
-      campusId: this.state.campusId
+      campusId: this.state.campusId,
+      email: this.state.email,
+      imageUrl: this.state.imageUrl,
+      gpa: this.state.gpa
     };
 
     //console.log(this.props);
@@ -59,6 +62,9 @@ class EditStudentContainer extends Component {
       firstname: "", 
       lastname: "", 
       campusId: null, 
+      email: "",
+      imageUrl: null,
+      gpa: null,
       redirect: true, 
       redirectId: this.props.match.params.id
     });
