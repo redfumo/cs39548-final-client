@@ -21,8 +21,6 @@ const campus = (state = initialState, action) => {  // Use "initialState" as def
       return action.payload;
     case EDIT_CAMPUS:
       return action.payload;
-    //case ENROLL_STUDENT:
-    //  return [...initialState, action.payload]??
     default:
       // If the Reducer doesn't recognize the Action Type, returns the previous (current) State unchanged.
       return state;

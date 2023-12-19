@@ -12,7 +12,6 @@ import { Redirect } from 'react-router-dom';
 
 import EditStudentView from '../views/EditStudentView';
 import { fetchStudentThunk, editStudentThunk } from '../../store/thunks';
-//const axios = require('axios');
 
 class EditStudentContainer extends Component {
   // Initialize state
@@ -50,7 +49,6 @@ class EditStudentContainer extends Component {
       gpa: this.state.gpa
     };
 
-    //console.log(this.props);
     student.id = this.props.match.params.id; //set id to the same student id
     student.campus = {}; //define students parameter
 

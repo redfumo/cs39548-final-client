@@ -12,7 +12,6 @@ import { Redirect } from 'react-router-dom';
 
 import EditCampusView from '../views/EditCampusView';
 import { fetchCampusThunk, editCampusThunk } from '../../store/thunks';
-//const axios = require('axios');
 
 class EditCampusContainer extends Component {
   // Initialize state
@@ -30,15 +29,6 @@ class EditCampusContainer extends Component {
 
   // Get the specific campus data from back-end database
   componentDidMount() {
-    // Get campus ID from URL (API link)
-    //console.log("mounted");
-    //this.props.fetchCampus(this.props.match.params.id);
-    //let res = axios.get(`/api/campuses/${this.props.match.params.id}`).then(response => {const currCampus = response.data});  
-    //let res = axios.get(`/api/campuses/${this.props.match.params.id}`).then(response => console.log(response.data));  
-    //console.log("_______________res stuff");
-    //console.log(res);
-    //console.log(res.data);
-    //console.log(currCampus);
     
   }
 
@@ -60,19 +50,11 @@ class EditCampusContainer extends Component {
         imageUrl: this.state.imageUrl
     };
 
-    //console.log(campus);
     campus.id = this.props.match.params.id; //set id to the same college id
     campus.students = []; //define students parameter
-    //console.log(campus.id);
-    //console.log(this.props.)
-    // Add new campus in back-end database
-    // let newCampus = await this.props.addCampus(campus);
 
     // Edit campus in back-end database
     await this.props.editCampus(campus);
-
-    //console.log(newCampus);
-    //console.log(this.props);
 
     // Update state, and trigger redirect to show the new campus
     this.setState({
